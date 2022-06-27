@@ -15,22 +15,169 @@ ul {
     padding: 0;
 }
 
+/* navbar */
 header {
     display: flex;
+    justify-content: space-between;
+    padding-top: 2rem;
+}
+
+.logodiv {
+    width: 15%;
+}
+
+.logodiv img {
+    width: 100%;
+    filter: invert(1);
 }
 
 header nav ul {
     display: flex;
 }
 
-header nav ul li {
-    padding-left: 8px;
-}
-
 header nav ul li a {
     color: black;
+    padding: 4.2vh 1.5vw;
+    font-size: 20px;
+    font-weight: 600;
+    transition: 0.5s ease-in-out;
 }
 
-.freedemo-btndiv a{
-    color: black;
+header nav ul li a:hover {
+    color: #04b261;
+}
+
+.freedemolink {
+    border: 1px solid;
+    padding: 0.7vw 1vw;
+    border-radius: 2px;
+    position: relative;
+    z-index: 1;
+}
+
+.freedemolink:hover {
+    color: #fff;
+}
+
+.freedemolink::after {
+    content: '';
+    display: block;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #04b261;
+    border-radius: 3px;
+    z-index: -1;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: bottom center;
+    transition: transform 0.7s;
+}
+
+.freedemolink:hover::after {
+    transform: scaleY(1);
+}
+
+.menubtn {
+    display: none;
+    border: none;
+    background: none;
+    margin-top: -10px;
+}
+
+.menubtn i {
+    font-size: 50px;
+}
+
+@media only screen and (max-width: 600px) {
+    header {
+        padding: 0.5rem;
+    }
+
+    .menubtn {
+        display: flex;
+    }
+
+    .phoneremovelike {
+        display: none;
+    }
+
+    .logodiv {
+        width: 25%;
+        padding-top: .5rem;
+    }
+
+    header nav ul li a {
+        font-size: 16px;
+    }
+
+    .menubtn i {
+        font-size: 45px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    header {
+        padding: 0.5rem;
+    }
+
+    .menubtn {
+        display: flex;
+    }
+
+    .phoneremovelike {
+        display: none;
+    }
+
+    header nav ul li a {
+        font-size: 20px;
+    }
+
+    .menubtn i {
+        font-size: 50px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    header {
+        padding: 0.5rem;
+    }
+
+    .menubtn {
+        display: flex;
+    }
+
+    .phoneremovelike {
+        display: none;
+    }
+
+    .logodiv {
+        width: 18%;
+    }
+
+}
+
+@media only screen and (min-width: 992px) {
+    header {
+        padding-top: 3rem;
+    }
+
+    .menubtn {
+        display: none;
+    }
+
+    .phoneremovelike {
+        display: block;
+    }
+
+    .logodiv {
+        width: 18%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .logodiv {
+        width: 15%;
+    }
 }
